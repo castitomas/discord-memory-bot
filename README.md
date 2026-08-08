@@ -2,39 +2,6 @@
 
 Bot de Discord con IA (Groq, gratis) que recuerda datos de cada usuario entre conversaciones, usando Supabase como base de datos. Versión tipada con TypeScript.
 
-## Setup
-
-1. **Discord**: creá una app en https://discord.com/developers/applications, sacá el `token` y el `client id`, activá el bot (Bot > Reset Token) e invitalo a tu server con permisos de `applications.commands` y `bot`.
-
-2. **Groq**: creá cuenta gratis en https://console.groq.com y generá una API key.
-
-3. **Supabase**: creá un proyecto gratis en https://supabase.com, andá al SQL editor y corré el contenido de `schema.sql`. Copiá la URL y la `service_role key` del proyecto (Settings > API).
-
-4. Copiá `.env.example` a `.env` y completá los valores.
-
-5. Instalá dependencias:
-   ```
-   npm install
-   ```
-
-6. Registrá los slash commands (solo la primera vez o cuando cambies comandos):
-   ```
-   npm run deploy-commands
-   ```
-
-## Desarrollo vs producción
-
-- **Desarrollo** (recarga automática con `tsx`, sin compilar):
-  ```
-  npm run dev
-  ```
-
-- **Producción** (compila TS a JS y corre el build):
-  ```
-  npm run build
-  npm start
-  ```
-
 ## Estructura
 
 ```
