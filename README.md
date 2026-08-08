@@ -1,6 +1,6 @@
-# Discord Memory Bot
+# Discord Memory Bot (TypeScript)
 
-Bot de Discord con IA (Groq, gratis) que recuerda datos de cada usuario entre conversaciones, usando Supabase como base de datos.
+Bot de Discord con IA (Groq, gratis) que recuerda datos de cada usuario entre conversaciones, usando Supabase como base de datos. Versión tipada con TypeScript.
 
 ## Setup
 
@@ -22,10 +22,33 @@ Bot de Discord con IA (Groq, gratis) que recuerda datos de cada usuario entre co
    npm run deploy-commands
    ```
 
-7. Corré el bot:
-   ```
-   npm start
-   ```
+## Desarrollo vs producción
+
+- **Desarrollo** (recarga automática con `tsx`, sin compilar):
+  ```
+  npm run dev
+  ```
+
+- **Producción** (compila TS a JS y corre el build):
+  ```
+  npm run build
+  npm start
+  ```
+
+## Estructura
+
+```
+src/
+├── index.ts              # entry point, maneja el cliente de Discord
+├── types.ts              # interfaces compartidas (ChatMessage, UserMemory, etc.)
+├── memory.ts             # lectura/escritura de memoria en Supabase
+├── ai.ts                 # llamada a Groq con contexto + memoria
+├── deploy-commands.ts    # registra los slash commands en Discord
+└── commands/
+    ├── chat.ts
+    ├── recordar.ts
+    └── olvidar.ts
+```
 
 ## Comandos
 
